@@ -1,3 +1,33 @@
+# HW 9 · Judge Trust Statement for the escalation criterion (Kristina Nilsson)
+
+This repo is a copy of the L09 kit (`alex-pancho/paypilot-l09-eval`) with my lab and homework on top.
+
+| What | File |
+|---|---|
+| Judge Trust Statement (final, 34 cases) | `judge-trust-statement.md` |
+| Labelled calibration set (34: 11 obvious PASS / 13 obvious FAIL / 10 disputed) | `sets/l09_labels.jsonl` |
+| Same labels with the old rubric v1 (before/after comparison) | `sets/l09_labels_v1.jsonl` |
+| Working set: threshold ESC-001, control ESC-002, judge cases ESC-J01…J05 | `sets/l09_escalation.jsonl` |
+| Rubric with version and changelog | `rubric.md` |
+| Calibration reports | `reports/calibration-*.json` |
+| Lab notes, step by step, with every finding | `lab-notes.md` |
+
+Labels were committed before any judge run on them: `d23e424` (12 lab cases), `e71eeb5` (all 34).
+
+**Note on `rubric_version` in the reports:** the kit's `tools/calibrate_run.py` writes `judge_model` into `reports/calibration-*.json` but not `rubric_version`. Which report used which rubric:
+
+| Report | Set | Rubric |
+|---|---|---|
+| `calibration-l09_labels-20261109T111235.json` | 12 lab cases | rubric.v1 |
+| `calibration-l09_labels-20261109T112411.json` | 12 lab cases | rubric.v1.1 |
+| `calibration-l09_labels_v1-20261109T181017.json` | 34 cases | rubric.v1 |
+| `calibration-l09_labels-20261109T180224.json` | 34 cases | rubric.v1.1 (final) |
+| `calibration-l09_step5_pairs-20261109T111638.json` | 6 bias pairs | kit pairs (rubric.v1 text) |
+
+The rubric text used is also stored in each case's `rubric` / `rubric_version` field of the set the report names.
+
+---
+
 # Дані до лабораторної L09: калібрування судді
 
 Тут лежать вхідні дані для лабораторної. Порядок дій у темі, цей файл лише пояснює, що де лежить і що з цим робити.
