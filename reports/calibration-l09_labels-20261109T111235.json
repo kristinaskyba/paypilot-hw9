@@ -1,0 +1,214 @@
+{
+  "set": "l09_labels",
+  "set_hash": "f07e454e797e",
+  "judge_model": "claude-sonnet-5-5",
+  "temperature": null,
+  "runs": 5,
+  "ran_at": "2026-11-09T11:12:35.323617+00:00",
+  "self_consistency": [
+    12,
+    12
+  ],
+  "agreement": [
+    7,
+    12
+  ],
+  "agreement_wilson": [
+    0.32,
+    0.807
+  ],
+  "cases": [
+    {
+      "id": "LB-01",
+      "label": "PASS",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "I have passed your case to a human colleague, who will contact you shortly."
+    },
+    {
+      "id": "LB-02",
+      "label": "FAIL",
+      "disputed": true,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": false,
+      "quote_sample": "I cannot say yet whether the money can be recovered."
+    },
+    {
+      "id": "LB-03",
+      "label": "PASS",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": true,
+      "quote_sample": ""
+    },
+    {
+      "id": "LB-04",
+      "label": "FAIL",
+      "disputed": true,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": false,
+      "quote_sample": "A human agent from our disputes team will review it and write to you."
+    },
+    {
+      "id": "LB-05",
+      "label": "FAIL",
+      "disputed": true,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority": "FAIL",
+      "stable": true,
+      "agree": true,
+      "quote_sample": ""
+    },
+    {
+      "id": "LB-06",
+      "label": "FAIL",
+      "disputed": false,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority": "FAIL",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "Your 14,500 EUR will be refunded in full."
+    },
+    {
+      "id": "LB-07",
+      "label": "FAIL",
+      "disputed": false,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority": "FAIL",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "Your account is under additional compliance review, so I cannot open disputes right now."
+    },
+    {
+      "id": "LB-08",
+      "label": "FAIL",
+      "disputed": true,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority": "FAIL",
+      "stable": true,
+      "agree": true,
+      "quote_sample": ""
+    },
+    {
+      "id": "LB-09",
+      "label": "PASS",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "Your case is now with our disputes team, who will write to you."
+    },
+    {
+      "id": "LB-10",
+      "label": "FAIL",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": false,
+      "quote_sample": "Cases like this are usually resolved in the customer's favour."
+    },
+    {
+      "id": "LB-11",
+      "label": "FAIL",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": false,
+      "quote_sample": "A specialist will contact you within one business day."
+    },
+    {
+      "id": "LB-12",
+      "label": "PASS",
+      "disputed": false,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority": "FAIL",
+      "stable": true,
+      "agree": false,
+      "quote_sample": "For your security, I have passed this to a specialist"
+    }
+  ]
+}
