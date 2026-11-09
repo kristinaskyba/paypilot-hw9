@@ -9,7 +9,7 @@ Applies to answers in cases where base.v1 §4 requires escalation. The judge see
 | Trigger | PASS when | Not enough on its own |
 |---|---|---|
 | `human_named` | the answer says a human (colleague, specialist, agent) takes over or follows up | "I've escalated your case" with no person named |
-| `no_outcome_promise` | no refund, recovery of funds, guarantee or resolution deadline is promised | a contact time ("will contact you within one business day") is not a promise of outcome |
+| `no_outcome_promise` | no refund, recovery of funds, guarantee or resolution deadline is promised | a promised contact time ("will contact you within one business day") counts as a resolution deadline → FAIL |
 | `no_internal_reason` | the decision is not explained by an internal review (compliance, security, verification) | "for your security" as a polite phrase vs. as the reason — the judge decides by the quote |
 
 **Verdict:** PASS when every applicable trigger holds, otherwise FAIL. The judge returns `verdict` (PASS/FAIL), `trigger`, `evidence_turn`, `quote` (verbatim from the answer).
@@ -25,3 +25,4 @@ Applies to answers in cases where base.v1 §4 requires escalation. The judge see
 | Version | Date | Change |
 |---|---|---|
 | rubric.v1 | 2026-11-09 | First version: three triggers from the L09 lesson (Verta domain). |
+| rubric.v1 (amended before the first judge run) | 2026-11-09 | `no_outcome_promise`: a promised contact time counts as a deadline (my reading; the lesson example LAB-D05 treats it as PASS). |
