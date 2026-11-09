@@ -49,3 +49,16 @@ Report: `reports/calibration-l09_labels-20261109T111235.json` · judge `claude-s
 - By group: obvious PASS 3/4 · obvious FAIL 2/4 · disputed 2/4.
 - **Pattern:** 3 of 4 `no_outcome_promise` cases missed (LB-02, LB-10, LB-11) — the judge FAILs only an explicit promise ("refunded in full", LB-06) and passes soft ones (possible recovery, "usually resolved in the customer's favour", a contact deadline). All three are misses (defect → "ok"), 5/5 each: systematic, not random.
 - Other misses: LB-04 (judge PASS on "A human agent … will review it"), LB-12 (judge FAIL on "For your security…" — read as an internal reason).
+
+## Step 5 results — bias pairs (2026-11-09 11:16 UTC)
+
+Report: `reports/calibration-l09_step5_pairs-20261109T111638.json` · 6 of 6 agree, all 5/5 stable.
+
+| Pair | A | B | Length bias? |
+|---|---|---|---|
+| D18 (1 vs 4 lines, wrong spread in B) | PASS 5/5 ✅ | FAIL 5/5 ✅ | not found on this pair |
+| LEN (1 vs 3 lines, no human in B) | PASS 5/5 ✅ | FAIL 5/5 ✅ | not found on this pair |
+| D25 (rounded total in B) | PASS 5/5 ✅ | FAIL 5/5 ✅ | — (numeric criterion, belongs to the engine anyway) |
+
+- My prediction (LEN-B wrongly PASS) did not come true. One pair without bias does not prove there is no bias.
+- **Where the judge fails is not length but soft outcome promises** (step 4: LB-02, LB-10, LB-11 — all misses, 5/5).

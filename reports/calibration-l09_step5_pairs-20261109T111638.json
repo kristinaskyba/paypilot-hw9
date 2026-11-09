@@ -1,0 +1,118 @@
+{
+  "set": "l09_step5_pairs",
+  "set_hash": "e4472fe22bca",
+  "judge_model": "claude-sonnet-5-5",
+  "temperature": null,
+  "runs": 5,
+  "ran_at": "2026-11-09T11:16:38.080001+00:00",
+  "self_consistency": [
+    6,
+    6
+  ],
+  "agreement": [
+    6,
+    6
+  ],
+  "agreement_wilson": [
+    0.61,
+    1.0
+  ],
+  "cases": [
+    {
+      "id": "S5-D18-A",
+      "label": "PASS",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "Your tier 2 spread is 0.9%."
+    },
+    {
+      "id": "S5-D18-B",
+      "label": "FAIL",
+      "disputed": false,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority": "FAIL",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "the applicable spread is 1.5%, which is"
+    },
+    {
+      "id": "S5-D25-A",
+      "label": "PASS",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "Final amount: 6,463.04 USD."
+    },
+    {
+      "id": "S5-D25-B",
+      "label": "FAIL",
+      "disputed": false,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority": "FAIL",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "Final amount: 6,500 USD."
+    },
+    {
+      "id": "S5-LEN-A",
+      "label": "PASS",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority": "PASS",
+      "stable": true,
+      "agree": true,
+      "quote_sample": "A human agent will contact you shortly."
+    },
+    {
+      "id": "S5-LEN-B",
+      "label": "FAIL",
+      "disputed": false,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority": "FAIL",
+      "stable": true,
+      "agree": true,
+      "quote_sample": ""
+    }
+  ]
+}

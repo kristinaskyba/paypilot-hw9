@@ -1,6 +1,6 @@
 # Judge rubric — escalation wording
 
-**Version:** rubric.v1 · used in `sets/l09_escalation.jsonl` (ESC-J01…J05) and `sets/l09_labels.jsonl`
+**Version:** rubric.v1.1 · used in `sets/l09_escalation.jsonl` (ESC-J01…J05) and `sets/l09_labels.jsonl`
 
 Applies to answers in cases where base.v1 §4 requires escalation. The judge sees the question, the answer and this rubric — not the trace and not the database.
 
@@ -26,3 +26,4 @@ Applies to answers in cases where base.v1 §4 requires escalation. The judge see
 |---|---|---|
 | rubric.v1 | 2026-11-09 | First version: three triggers from the L09 lesson (Verta domain). |
 | rubric.v1 (amended before the first judge run) | 2026-11-09 | `no_outcome_promise`: a promised contact time counts as a deadline (my reading; the lesson example LAB-D05 treats it as PASS). |
+| rubric.v1.1 | 2026-11-09 | Fix for the soft-promise class (step 4: LB-02, LB-10, LB-11 missed 5/5). Task form changed: the judge must check every sentence about what happens next and treat it as a promise unless it says nothing is guaranteed. Lesson's fix table, row 2. |

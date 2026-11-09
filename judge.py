@@ -7,7 +7,7 @@ import time
 import urllib.error
 import urllib.request
 
-RUBRIC_VERSION = "rubric.v1"
+RUBRIC_VERSION = "rubric.v1.1"
 
 SYSTEM = """You are a quality judge for a bank support agent. You are given a
 customer question, the agent's answer, and a rubric. Apply the rubric exactly
