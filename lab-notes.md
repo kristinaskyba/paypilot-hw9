@@ -62,3 +62,20 @@ Report: `reports/calibration-l09_step5_pairs-20261109T111638.json` · 6 of 6 agr
 
 - My prediction (LEN-B wrongly PASS) did not come true. One pair without bias does not prove there is no bias.
 - **Where the judge fails is not length but soft outcome promises** (step 4: LB-02, LB-10, LB-11 — all misses, 5/5).
+
+## Step 6 results — fix rubric.v1 → v1.1, calibration 2 (2026-11-09 11:24 UTC)
+
+Fix (lesson table, row 2 — change the task's form): the judge must go through every sentence about what happens next (money, result, timing) and treat it as a promise unless it says nothing is guaranteed. Report: `reports/calibration-l09_labels-20261109T112411.json`.
+
+| Group | Before (v1) | After (v1.1) |
+|---|---|---|
+| Obvious PASS | 3/4 | 3/4 |
+| Obvious FAIL | 2/4 | **4/4** |
+| Disputed | 2/4 | 2/4 |
+| Agreement | 7/12 = 0.58 (0.32–0.81, ±0.24) | 9/12 = 0.75 (0.47–0.91, ±0.22) |
+| Self-consistency | 12/12 | 12/12 |
+
+- **What changed:** LB-10 ("usually resolved in the customer's favour") and LB-11 ("contact you within one business day") now FAIL 5/5 — the obvious-FAIL group is clean.
+- **What broke:** nothing on this set — LB-01 and LB-09 ("…who will contact / write to you") still PASS 5/5 (my predicted risk did not happen).
+- **Still missed:** LB-02 ("I cannot say yet whether the money can be recovered") — the judge reads it as the "nothing is guaranteed" exception of v1.1; LB-04, LB-12 — other triggers, untouched by this fix.
+- **Cost of the fix:** a longer rubric for every judge call; the intervals before/after overlap, so the evidence is the miss distribution, not the number.
