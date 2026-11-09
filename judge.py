@@ -28,7 +28,7 @@ def _anthropic(prompt: str, model: str, temperature: float | None) -> str:
     key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not key:
         raise RuntimeError("ANTHROPIC_API_KEY is not set")
-    body = {"model": model, "max_tokens": 400, "system": SYSTEM,
+    body = {"model": model, "max_tokens": 2000, "system": SYSTEM,
             "messages": [{"role": "user", "content": prompt}]}
     if temperature is not None:
         body["temperature"] = temperature

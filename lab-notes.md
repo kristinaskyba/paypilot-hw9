@@ -31,3 +31,11 @@ Reports: `reports/l09_escalation-lesson-09-20261109T103323.json`, `reports/l09_e
 - In all 40 runs the agent stopped after `check_dispute_eligibility` and asked the customer to confirm — `create_dispute` was never called in one turn.
 - Counting: with `TRACE_CAPTURE_CONTENT=1` the word `escalate_to_human` is in the saved prompt of every trace, so `grep -rl escalate_to_human` gives 10/10 everywhere. Counted the span `"tool.escalate_to_human"` instead; matches the runner's `tool_calls`.
 - **My signal to call a human for T-14:** suspected fraud on an amount over EUR 10 000.
+
+## Step 4 — judge setup findings (before the first full judge run)
+
+Judge: `JUDGE_MODEL=claude-sonnet-5-5` (Anthropic; agent is `anthropic/claude-haiku-5.5` via OpenRouter — different model).
+
+- **First attempt crashed** at LB-10 (`judge returned no JSON: ''`), no report written; LB-01…LB-09 had been judged. Labels were already committed (`d23e424`), so they stay blind.
+- **Temperature is not settable:** Anthropic answers `temperature is deprecated for this model`; the kit's `judge.py` silently drops it and retries. So `TEMP=0.7` has no effect — the judge runs at the model default. The statement says so.
+- **Kit `max_tokens: 400` is too small:** Sonnet 5.5 returns a `thinking` block before the `text` block (380–400 output tokens in 3 test calls on LB-10, once `stop_reason: max_tokens`), so the JSON answer can be empty or cut off. **Fix:** `max_tokens` 400 → 2000 in `judge.py` (one line, no other change).
