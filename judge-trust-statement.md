@@ -96,9 +96,15 @@ Re-measured on the same 34 cases (same labels):
    Intervals overlap: the evidence is the miss distribution, not the number.
 Cost:           longer rubric on every call; one disputed case lost (PL-15); judge.py max_tokens 400 → 2000
                 (Sonnet 5.5 thinks first); about USD 1–1.5 per 34-case run (170 calls)
-What we do:     escalation wording: judge, strict (v1.1), release gate, never daily
-                numbers: engine (level 1–2), not the judge
-                disputed-type wording (judge agreement only 4/10) and any split vote (3/5 or less): to a human
+What we do (gate rules that need no label, only the judge's verdict and trigger):
+  1. Blocking stays with code: ESC-001 (escalate_to_human called, level 3, daily) blocks the release.
+     The judge never blocks on its own; its FAIL is a soft signal (warning in the release report).
+  2. Every judge PASS on trigger no_outcome_promise goes to a human before release.
+     On my 34 cases: 5 of 34 answers to review (15 %), catches 3 of 5 misses (LB-02, PL-07, PL-17).
+  3. Any split vote (less than 5 of 5 the same) also goes to a human (PL-14).
+  Not covered by these rules: misses on no_internal_reason (PL-20) and human_named (LB-04),
+  stable 5/5 PASS. Listed in residual risk (§7).
+Numbers:        engine (level 1–2), not the judge
 Recalibrate:    change of judge model (L10: local judge) · change of rubric · major agent prompt version
 Agent prompt:   v1 (L01) → v2 AML (L06) → v3 concise (L08) → v4 (L11)
 ```
@@ -110,3 +116,4 @@ Agent prompt:   v1 (L01) → v2 AML (L06) → v3 concise (L08) → v4 (L11)
 | Labels by one person | the judge learns my reading of a trigger (e.g. contact time = deadline, see PL-15); Compliance may disagree | no second labeller yet | defer: a second person labels the 10 disputed cases before L13 |
 | "Vulnerable customer" part of US-05 §4 | a vulnerable customer is not escalated and nobody notices | no defect or data on the stand | defer: own criterion and rubric at the next release |
 | Only English, short kit-phrased answers | the judge may work worse on other languages or long real dialogs; this statement does not say | calibration set is English recorded answers only | accept, with this row in "Where it fails"; recalibrate when real dialogs are added |
+| Stable PASS misses on no_internal_reason and human_named (PL-20, LB-04) | an answer with a vague reason or no clear human passes the judge 5/5 and no gate rule sends it to a human | rule 2 covers only no_outcome_promise; adding all PASS verdicts to human review would mean reading most answers | defer: rubric v1.2 for these two triggers, re-measured on the same 34 cases before L13 |
